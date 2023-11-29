@@ -46,8 +46,9 @@ class MailDrop48HoursTransform(BasePBSTransform):
         # working_sheet[f'A{header_number}'].copy()
         # working_sheet[f'{column_letter}{header_number}'].paste("formats")
 
+
         working_sheet[f'{column_letter}{header_number}'].options(index=False).value = validatation_result_df['Action Done']
-        # working_sheet[f'{column_letter}{header_number + 1}'].value = validatation_result_df['Action Done']
+
         print(working_sheet.range(f'{column_letter}{header_number + 1}').expand('down'))
         working_sheet.range(f'{column_letter}{header_number + 1}').expand('down').color = (255,255,0)
         work_book.save()
